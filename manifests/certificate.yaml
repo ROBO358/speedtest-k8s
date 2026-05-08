@@ -1,0 +1,14 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: speedtest-tls
+spec:
+  secretName: speedtest-tls
+  commonName: speedtest.yh.k8s.tsuru.run
+  dnsNames:
+    - speedtest.yh.k8s.tsuru.run
+  issuerRef:
+    kind: ClusterIssuer
+    name: letsencrypt-prod
+  duration: 2160h
+  renewBefore: 720h
