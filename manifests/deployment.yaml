@@ -34,9 +34,3 @@ spec:
               memory: 32Mi
             limits:
               memory: 128Mi
-          securityContext:
-            allowPrivilegeEscalation: false
-            readOnlyRootFilesystem: false
-            runAsNonRoot: false # This image typically runs as root internally by default; we could customize but keeping simple based on official image
-            capabilities:
-              drop: [ALL]
