@@ -14,4 +14,4 @@ resources:
 
 images:
   - name: ghcr.io/librespeed/speedtest
-    newTag: v6.1.0
+    newTag: 6.1.0
