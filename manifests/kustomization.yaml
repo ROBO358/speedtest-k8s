@@ -9,8 +9,9 @@ resources:
   - service.yaml
   - gateway.yaml
   - httproute.yaml
+  - httproute-tunnel.yaml
   - ciliumnetworkpolicy.yaml
 
 images:
   - name: ghcr.io/librespeed/speedtest
-    newTag: latest
+    newTag: v6.1.0

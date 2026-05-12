@@ -28,9 +28,25 @@ spec:
               value: "standalone"
             - name: TELEMETRY
               value: "false"
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+            initialDelaySeconds: 5
+            periodSeconds: 15
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+            initialDelaySeconds: 3
+            periodSeconds: 5
           resources:
             requests:
               cpu: 10m
               memory: 32Mi
             limits:
               memory: 128Mi
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop: [ALL]
