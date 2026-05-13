@@ -47,6 +47,7 @@ spec:
               memory: 128Mi
           securityContext:
             allowPrivilegeEscalation: false
-            # runAsNonRoot は不可: librespeed/speedtest イメージは root で動作する設計
+            # runAsNonRoot は不可: librespeed/speedtest は root 動作でスタートアップ chown が必要
             capabilities:
               drop: [ALL]
+              add: [CHOWN]
